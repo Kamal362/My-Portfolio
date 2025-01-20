@@ -11,9 +11,9 @@ services:
         sync: false
       - key: EMAIL_PASS
         sync: false
-      - key: RECIPIENT_EMAIL
+      - key: USER_EMAIL
         sync: false
     disk:
-      name: my-portfolio-data
-      mountPath: /opt/render/project/src
+      name: my-portfolio
+      mountPath: /
       sizeGB: 1

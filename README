@@ -1,0 +1,16 @@
+=== EMAIL SENDER ===
+
+ npm install nodemailer 
+
+ ==== how to configure the email ====
+
+ 1. login into your google account
+
+ 2. enable 2-steps auth
+
+ 3. search for <App password> in your email and generate unique pass
+
+ 4. copy and paste the password in an environmenet varaible 
+
+
+

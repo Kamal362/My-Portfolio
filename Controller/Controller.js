@@ -1,24 +1,37 @@
+const sendEmail = require('../Utilities/Send_email');
+
 
 
 const getHomePage = (req, res) => {
     res.render('portfolio', { title: 'HomePage' });
 }
 
-const getAboutPage = (req, res) => {
-    res.render('./About/About_me', { title: 'About Me', About: 'about' });
+const postFormData = (req, res) => {
+    const { name, email, message } = req.body;
+
+    console.log(`Form data: Name: ${name}, Email: ${email}, Message: ${message}`);
+    sendEmail.sendEmail(name, email, message);
+    res.redirect('/');
 }
 
-const getProjectsPage = (req, res) => {
-    res.render('projects', { title: 'Projects' });
-}
+// const getAboutPage = (req, res) => {
+    
+//     res.render('./About/About_me', { title: 'About Me', About: 'about' });
+// }
 
-const getContactPage = (req, res) => {
-    res.render('contact', { title: 'Contact' });
-}
+// const getProjectsPage = (req, res) => {
+//     res.render('projects', { title: 'Projects' });
+// }
+
+// const getContactPage = (req, res) => {
+//     res.render('contact', { title: 'Contact' });
+// }
 
 module.exports = {
     getHomePage,
-    getAboutPage,
-    getProjectsPage,
-    getContactPage
+    postFormData
+    // getAboutPage,
+    // getProjectsPage,
+    // getContactPage,
+   
 }
