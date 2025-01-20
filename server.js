@@ -9,6 +9,7 @@ const port = process.env.PORT || 3000;
 // middlewares for setting public folder and CORS
 app.use(express.static('public'));
 app.use(express.json());
+app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 app.use(morgan('dev'));
 app.use(express.urlencoded({ extended: true }));
